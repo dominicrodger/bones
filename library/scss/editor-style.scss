@@ -183,6 +183,12 @@ body#tinymce.wp-editor {
 			height: auto;
 		}
 
+                img[data-wp-more] {
+                    height: 16px;
+                    display: block;
+                    margin: 15px auto 0;
+                }
+
 		.size-auto,
 		.size-full,
 		.size-large,
