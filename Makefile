@@ -5,7 +5,7 @@ help:
 	@echo "watch - run compass in watch mode, for development"
 
 compile:
-	cd library/scss && compass compile --output-style compressed --force
+	cd library/scss && compass compile --output-style compressed --environment production --force --time
 
 watch:
 	cd library/scss && compass compile --force
