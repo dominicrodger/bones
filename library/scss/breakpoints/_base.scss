@@ -322,6 +322,7 @@ POSTS & CONTENT STYLES
 			ul, ol, table, dl {}
 
 			ul, ol {
+				margin-left: 1.5em;
 
 				li {}
 
@@ -329,13 +330,17 @@ POSTS & CONTENT STYLES
 
 			ul {
 
-				li {}
+				li {
+					list-style-type: disc;
+				}
 
 			}
 
 			ol {
 
-				li {}
+				li {
+					list-style-type: decimal;
+				}
 
 			}
 

@@ -127,6 +127,19 @@ body#tinymce.wp-editor {
 			}
 		}
 
+		ol,
+		ul {
+			margin-left: 1.5em;
+		}
+
+                ul {
+			list-style-type: disc;
+		}
+
+		ol {
+			list-style-type: decimal;
+		}
+
 		td {
 			padding: 7px;
 			border-right: 1px solid $gray;
