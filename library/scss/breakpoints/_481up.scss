@@ -122,3 +122,11 @@ do they need tweaking?
 		li {}
 	}
 } /* end .footer-links */
+
+ul.display-posts-listing {
+    li.listing-item {
+        a.image {
+            display: inline;
+        }
+    }
+}

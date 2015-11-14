@@ -897,3 +897,44 @@ FOOTER STYLES
 
 
 	.copyright {}
+
+ul.display-posts-listing {
+    li.listing-item {
+        clear: left;
+        margin-bottom: 1em;
+
+        a.image {
+            display: none;
+            float: left;
+            margin-right: 15px;
+            margin-bottom: 10px;
+
+            img {
+                border: 1px solid $meta-gray;
+                padding: 5px;
+                border-radius: 5px;
+            }
+        }
+
+        a.title {
+            font-size: 1.5em;
+            text-decoration: none;
+        }
+
+        span.date {
+            margin-left: 0.5em;
+            color: $meta-gray;
+        }
+
+        span.excerpt-dash {
+            display: block;
+            color: #fff;
+        }
+    }
+}
+
+.gallery-item {
+    float: left;
+    margin-right: 25px;
+    margin-bottom: 15px;
+}
