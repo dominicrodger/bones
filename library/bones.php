@@ -114,15 +114,22 @@ function bones_gallery_style($css) {
 
 function bones_custom_styles() {
     $header_color = get_theme_mod('header_color');
+    $header_text_color = get_theme_mod('header_text_color');
     $footer_color = get_theme_mod('footer_color');
+
     $custom_css = "
     .header {
         background-color: {$header_color};
+        color: {$header_text_color};
+    }
+    .header #logo a {
+        color: {$header_text_color};
     }
     .footer {
         background-color: {$footer_color};
     }
     ";
+
     wp_add_inline_style('bones-stylesheet', $custom_css);
 }
 
