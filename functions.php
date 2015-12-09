@@ -129,6 +129,47 @@ new image size.
   - Create some boilerplate Sections, Controls and Settings
 */
 
+function bones_add_color_setting($wp_customize, $title, $slug, $default) {
+  $wp_customize->add_setting(
+      $slug,
+      array(
+          'default'   => $default,
+          'transport' => 'refresh',
+      )
+  );
+
+  $wp_customize->add_control(
+      new WP_Customize_Color_Control(
+          $wp_customize,
+          $slug,
+          array(
+              'label'      => $title,
+              'section'    => 'colors',
+              'settings'   => $slug,
+          )
+      )
+  );
+}
+
+function bones_tweak_color_customizer($wp_customize) {
+  $wp_customize->remove_control("background_color");
+  $wp_customize->remove_control("header_textcolor");
+
+  bones_add_color_setting(
+      $wp_customize,
+      "Header Color",
+      "header_color",
+      "#323944"
+  );
+
+  bones_add_color_setting(
+      $wp_customize,
+      "Footer Color",
+      "footer_color",
+      "#323944"
+  );
+}
+
 function bones_theme_customizer($wp_customize) {
   // $wp_customize calls go here.
   //
@@ -146,6 +187,7 @@ function bones_theme_customizer($wp_customize) {
   // Uncomment the following to change the default section titles
   // $wp_customize->get_section('colors')->title = __( 'Theme Colors' );
   // $wp_customize->get_section('background_image')->title = __( 'Images' );
+  bones_tweak_color_customizer($wp_customize);
 }
 
 add_action( 'customize_register', 'bones_theme_customizer' );

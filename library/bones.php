@@ -112,6 +112,19 @@ function bones_gallery_style($css) {
 	return preg_replace( "!<style type='text/css'>(.*?)</style>!s", '', $css );
 }
 
+function bones_custom_styles() {
+    $header_color = get_theme_mod('header_color');
+    $footer_color = get_theme_mod('footer_color');
+    $custom_css = "
+    .header {
+        background-color: {$header_color};
+    }
+    .footer {
+        background-color: {$footer_color};
+    }
+    ";
+    wp_add_inline_style('bones-stylesheet', $custom_css);
+}
 
 /*********************
 SCRIPTS & ENQUEUEING
@@ -157,6 +170,8 @@ function bones_scripts_and_styles() {
 		wp_enqueue_script( 'bones-js' );
 
   }
+
+  bones_custom_styles();
 }
 
 /*********************
