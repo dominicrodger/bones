@@ -225,6 +225,13 @@ function bones_tweak_color_customizer($wp_customize) {
       "footer_color",
       "#323944"
   );
+
+  bones_add_color_setting(
+      $wp_customize,
+      "Footer Text Color",
+      "footer_text_color",
+      "#FFFFFF"
+  );
 }
 
 function bones_theme_customizer($wp_customize) {

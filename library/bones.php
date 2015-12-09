@@ -116,6 +116,7 @@ function bones_custom_styles() {
     $header_color = get_theme_mod('header_color');
     $header_text_color = get_theme_mod('header_text_color');
     $footer_color = get_theme_mod('footer_color');
+    $footer_text_color = get_theme_mod('footer_text_color');
 
     $custom_css = "
     .header {
@@ -127,6 +128,7 @@ function bones_custom_styles() {
     }
     .footer {
         background-color: {$footer_color};
+        color: {$footer_text_color};
     }
     ";
 
