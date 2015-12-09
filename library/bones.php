@@ -245,6 +245,12 @@ function bones_theme_support() {
 		'comment-form'
 	) );
 
+    $header_defaults = array(
+        'width'                  => 475,
+        'height'                 => 150,
+    );
+
+    add_theme_support('custom-header', $header_defaults);
 } /* end bones theme support */
 
 

@@ -49,8 +49,25 @@
 				<div id="inner-header" class="wrap cf">
 
 					<?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
-					<p id="logo" class="h1" itemscope itemtype="http://schema.org/Organization"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></p>
-
+					<?php if (has_header_image()) {
+					?>
+					<a href="<?php echo home_url(); ?>" rel="nofollow" class="header-image-link">
+						<img src="<?php echo( get_header_image() ); ?>" />
+					</a>
+					<?php
+					}
+					else {
+					?>
+					<p id="logo" class="h1" itemscope itemtype="http://schema.org/Organization">
+					<a href="<?php echo home_url(); ?>" rel="nofollow">
+					<?php
+						echo bloginfo('name');
+					?>
+                    </a>
+					</p>
+					<?php
+					}
+					?>
 					<?php // if you'd like to use the site description you can un-comment it below ?>
 					<?php // bloginfo('description'); ?>
 

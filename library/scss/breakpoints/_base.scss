@@ -162,6 +162,10 @@ HEADER STYLES
 			color: $white;
 		}
 	}
+	a.header-image-link {
+		line-height: 0;
+		display: block;
+	}
 }
 
 /*********************
