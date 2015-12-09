@@ -132,7 +132,7 @@ new image size.
 function bones_theme_customizer($wp_customize) {
   // $wp_customize calls go here.
   //
-  // Uncomment the below lines to remove the default customize sections 
+  // Uncomment the below lines to remove the default customize sections
 
   // $wp_customize->remove_section('title_tagline');
   // $wp_customize->remove_section('colors');
