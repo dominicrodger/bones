@@ -129,6 +129,56 @@ new image size.
   - Create some boilerplate Sections, Controls and Settings
 */
 
+function bones_add_footer_customizer($wp_customize) {
+  $wp_customize->add_setting(
+      'copyright_name' ,
+      array(
+          'default'   => '',
+          'transport' => 'refresh',
+      )
+  );
+
+  $wp_customize->add_setting(
+      'footer_address' ,
+      array(
+          'default'   => '',
+          'transport' => 'refresh',
+      )
+  );
+
+  $wp_customize->add_section(
+      'bonestheme_footer',
+      array(
+          'title'    => "Footer",
+          'priority' => 50,
+      )
+  );
+
+  $wp_customize->add_control(
+      new WP_Customize_Control(
+          $wp_customize,
+          'footer_text',
+          array(
+              'label'      => 'Footer Text',
+              'section'    => 'bonestheme_footer',
+              'settings'   => 'copyright_name',
+          )
+      )
+  );
+
+  $wp_customize->add_control(
+      new WP_Customize_Control(
+          $wp_customize,
+          'footer_address',
+          array(
+              'label'      => 'Footer Address',
+              'section'    => 'bonestheme_footer',
+              'settings'   => 'footer_address',
+          )
+      )
+  );
+}
+
 function bones_add_color_setting($wp_customize, $title, $slug, $default) {
   $wp_customize->add_setting(
       $slug,
@@ -193,6 +243,8 @@ function bones_theme_customizer($wp_customize) {
   // Uncomment the following to change the default section titles
   // $wp_customize->get_section('colors')->title = __( 'Theme Colors' );
   // $wp_customize->get_section('background_image')->title = __( 'Images' );
+
+  bones_add_footer_customizer($wp_customize);
   bones_tweak_color_customizer($wp_customize);
 }
 

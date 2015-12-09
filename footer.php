@@ -18,7 +18,22 @@
 						)); ?>
 					</nav>
 
-					<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.</p>
+					<p class="source-org copyright">
+						&copy; <?php echo date('Y'); ?>
+						<?php
+						$copyright_name = get_theme_mod('copyright_name');
+						$footer_address = get_theme_mod('footer_address');
+						if (empty($copyright_name)) {
+							echo bloginfo( 'name' ).".";
+						}
+						else {
+						    echo $copyright_name;
+						}
+						if (!empty($footer_address)) {
+							echo "<br />".$footer_address;
+						}
+						?>
+					</p>
 
 				</div>
 
