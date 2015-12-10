@@ -113,30 +113,41 @@ function bones_gallery_style($css) {
 }
 
 function bones_custom_styles() {
-    $header_color = get_theme_mod('header_color');
-    $header_text_color = get_theme_mod('header_text_color');
-    $header_menu_color = get_theme_mod('header_menu_color');
-    $header_menu_text_color = get_theme_mod('header_menu_text_color');
-    $footer_color = get_theme_mod('footer_color');
-    $footer_text_color = get_theme_mod('footer_text_color');
+    $keys = array(
+        'header_color',
+        'header_text_color',
+        'header_menu_color',
+        'header_menu_text_color',
+        'footer_color',
+        'footer_text_color'
+    );
+
+    $colors = array();
+
+    foreach ($keys as $key) {
+        $colors[$key] = get_theme_mod($key);
+        if (empty($colors[$key])) {
+            $colors[$key] = "inherit";
+        }
+    }
 
     $custom_css = "
     .header {
-        background-color: {$header_color};
-        color: {$header_text_color};
+        background-color: {$colors['header_color']};
+        color: {$colors['header_text_color']};
     }
     .header #logo a {
-        color: {$header_text_color};
+        color: {$colors['header_text_color']};
     }
     ul#menu-header-menu {
-        background-color: {$header_menu_color};
+        background-color: {$colors['header_menu_color']};
     }
     ul#menu-header-menu li a {
-        color: {$header_menu_text_color};
+        color: {$colors['header_menu_text_color']};
     }
     .footer {
-        background-color: {$footer_color};
-        color: {$footer_text_color};
+        background-color: {$colors['footer_color']};
+        color: {$colors['footer_text_color']};
     }
     ";
 
