@@ -246,8 +246,10 @@ function bones_theme_support() {
 	) );
 
     $header_defaults = array(
-        'width'                  => 475,
-        'height'                 => 150,
+        'width' => 475,
+        'height' => 150,
+        'flex-width' => true,
+        'flex-height' => true,
     );
 
     add_theme_support('custom-header', $header_defaults);
