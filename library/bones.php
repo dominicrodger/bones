@@ -115,6 +115,8 @@ function bones_gallery_style($css) {
 function bones_custom_styles() {
     $header_color = get_theme_mod('header_color');
     $header_text_color = get_theme_mod('header_text_color');
+    $header_menu_color = get_theme_mod('header_menu_color');
+    $header_menu_text_color = get_theme_mod('header_menu_text_color');
     $footer_color = get_theme_mod('footer_color');
     $footer_text_color = get_theme_mod('footer_text_color');
 
@@ -125,6 +127,12 @@ function bones_custom_styles() {
     }
     .header #logo a {
         color: {$header_text_color};
+    }
+    ul#menu-header-menu {
+        background-color: {$header_menu_color};
+    }
+    ul#menu-header-menu li a {
+        color: {$header_menu_text_color};
     }
     .footer {
         background-color: {$footer_color};

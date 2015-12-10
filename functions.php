@@ -221,6 +221,20 @@ function bones_tweak_color_customizer($wp_customize) {
 
   bones_add_color_setting(
       $wp_customize,
+      "Header Menu Color",
+      "header_menu_color",
+      "#323944"
+  );
+
+  bones_add_color_setting(
+      $wp_customize,
+      "Header Menu Text Color",
+      "header_menu_text_color",
+      "#FFFFFF"
+  );
+
+  bones_add_color_setting(
+      $wp_customize,
       "Footer Color",
       "footer_color",
       "#323944"
