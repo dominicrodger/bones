@@ -112,6 +112,16 @@ function bones_gallery_style($css) {
 	return preg_replace( "!<style type='text/css'>(.*?)</style>!s", '', $css );
 }
 
+function get_opt_with_default($key, $default) {
+    $val = get_theme_mod($key);
+
+    if (empty($val)) {
+        return $default;
+    }
+
+    return $val;
+}
+
 function bones_custom_styles() {
     $keys = array(
         'header_color',
@@ -125,10 +135,7 @@ function bones_custom_styles() {
     $colors = array();
 
     foreach ($keys as $key) {
-        $colors[$key] = get_theme_mod($key);
-        if (empty($colors[$key])) {
-            $colors[$key] = "inherit";
-        }
+        $colors[$key] = get_opt_with_default($key, "inherit");
     }
 
     $custom_css = "
