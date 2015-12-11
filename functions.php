@@ -150,7 +150,7 @@ function bones_add_footer_customizer($wp_customize) {
       'bonestheme_footer',
       array(
           'title'    => "Footer",
-          'priority' => 50,
+          'priority' => 70,
       )
   );
 
