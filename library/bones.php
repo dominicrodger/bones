@@ -138,10 +138,21 @@ function bones_custom_styles() {
         $colors[$key] = get_opt_with_default($key, "inherit");
     }
 
+    $header_margin_bottom = get_opt_with_default(
+        "header_image_bottom_margin", "0"
+    );
+    $header_margin_top = get_opt_with_default(
+        "header_image_top_margin", "0"
+    );
+
     $custom_css = "
     .header {
         background-color: {$colors['header_color']};
         color: {$colors['header_text_color']};
+    }
+    .header a.header-image-link {
+        margin-bottom: {$header_margin_bottom}px;
+        margin-top: {$header_margin_top}px;
     }
     .header #logo a {
         color: {$colors['header_text_color']};

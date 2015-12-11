@@ -179,6 +179,52 @@ function bones_add_footer_customizer($wp_customize) {
   );
 }
 
+function bones_add_header_customizer($wp_customize) {
+  $wp_customize->add_setting(
+      'header_image_top_margin' ,
+      array(
+          'default'   => '0',
+          'transport' => 'refresh',
+      )
+  );
+
+  $wp_customize->add_setting(
+      'header_image_bottom_margin' ,
+      array(
+          'default'   => '0',
+          'transport' => 'refresh',
+      )
+  );
+
+  $wp_customize->add_control(
+      new WP_Customize_Control(
+          $wp_customize,
+          'header_image_top_margin',
+          array(
+              'label'      => 'Header Image Margin (Top)',
+              'section'    => 'header_image',
+              'settings'   => 'header_image_top_margin',
+              'type'       => 'number',
+          )
+      )
+  );
+
+  $wp_customize->add_control(
+      new WP_Customize_Control(
+          $wp_customize,
+          'header_image_bottom_margin',
+          array(
+              'label'      => 'Header Image Margin (Bottom)',
+              'section'    => 'header_image',
+              'settings'   => 'header_image_bottom_margin',
+              'type'       => 'number',
+          )
+      )
+  );
+
+  $wp_customize->get_section( 'header_image' )->title = 'Header';
+}
+
 function bones_add_color_setting($wp_customize, $title, $slug, $default) {
   $wp_customize->add_setting(
       $slug,
@@ -265,6 +311,7 @@ function bones_theme_customizer($wp_customize) {
   // $wp_customize->get_section('colors')->title = __( 'Theme Colors' );
   // $wp_customize->get_section('background_image')->title = __( 'Images' );
 
+  bones_add_header_customizer($wp_customize);
   bones_add_footer_customizer($wp_customize);
   bones_tweak_color_customizer($wp_customize);
 }
