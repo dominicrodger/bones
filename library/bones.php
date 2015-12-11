@@ -157,11 +157,11 @@ function bones_custom_styles() {
     .header #logo a {
         color: {$colors['header_text_color']};
     }
-    ul#menu-header-menu {
+    .header nav {
         background-color: {$colors['header_menu_color']};
     }
-    ul#menu-header-menu li a {
-        color: {$colors['header_menu_text_color']};
+    .header nav li a {
+        color: {$colors['header_menu_text_2color']};
     }
     .footer {
         background-color: {$colors['footer_color']};
