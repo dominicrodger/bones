@@ -281,6 +281,13 @@ function bones_tweak_color_customizer($wp_customize) {
 
   bones_add_color_setting(
       $wp_customize,
+      "Link Color",
+      "link_color",
+      "#f01d4f"
+  );
+
+  bones_add_color_setting(
+      $wp_customize,
       "Footer Color",
       "footer_color",
       "#323944"

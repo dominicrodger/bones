@@ -128,6 +128,7 @@ function bones_custom_styles() {
         'header_text_color',
         'header_menu_color',
         'header_menu_text_color',
+        'link_color',
         'footer_color',
         'footer_text_color'
     );
@@ -146,6 +147,9 @@ function bones_custom_styles() {
     );
 
     $custom_css = "
+    a, a:visited {
+        color: {$colors['link_color']};
+    }
     .header {
         background-color: {$colors['header_color']};
         color: {$colors['header_text_color']};
