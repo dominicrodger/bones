@@ -165,6 +165,10 @@ HEADER STYLES
 	a.header-image-link {
 		line-height: 0;
 		display: block;
+
+		img {
+			max-width: 100%;
+		}
 	}
 }
 
