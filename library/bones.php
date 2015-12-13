@@ -161,7 +161,7 @@ function bones_custom_styles() {
         background-color: {$colors['header_menu_color']};
     }
     .header nav li a {
-        color: {$colors['header_menu_text_2color']};
+        color: {$colors['header_menu_text_color']};
     }
     .footer {
         background-color: {$colors['footer_color']};
