@@ -25,6 +25,12 @@ body {
   	-moz-osx-font-smoothing: grayscale;
 }
 
+body.page {
+	p.byline {
+		display: none;
+	}
+}
+
 /********************
 WORDPRESS BODY CLASSES
 style a page via class
