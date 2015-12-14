@@ -25,6 +25,12 @@ body {
   	-moz-osx-font-smoothing: grayscale;
 }
 
+body.home {
+	header.article-header {
+		display: none;
+	}
+}
+
 body.page {
 	p.byline {
 		display: none;
