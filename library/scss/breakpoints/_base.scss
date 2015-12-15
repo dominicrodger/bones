@@ -921,9 +921,12 @@ FOOTER STYLES
 	}
 
 ul.display-posts-listing {
+    margin-left: 0;
+
     li.listing-item {
         clear: left;
         margin-bottom: 1em;
+        list-style-type: none;
 
         a.image {
             display: none;
