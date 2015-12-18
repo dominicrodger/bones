@@ -104,8 +104,47 @@ function loadGravatars() {
 	}
 } // end function
 
+function close_mobile_menu() {
+    jQuery(".menu-mobile-container").slideUp();
+    jQuery(document).off("keyup", handle_escape_with_menu_open);
+}
+
+function handle_escape_with_menu_open(evt) {
+    if (evt.keyCode != 27) {
+        // Keypress wasn't escape, bail
+        return;
+    }
+
+    close_mobile_menu();
+}
+
+function toggle_mobile_menu(evt) {
+    var el = jQuery(".menu-mobile-container");
+
+    if (el.is(":visible")) {
+        close_mobile_menu();
+    }
+    else {
+        el.slideDown();
+        jQuery(document).keyup(handle_escape_with_menu_open);
+    }
+}
+
+function initialise_mobile_menu() {
+    var menu = jQuery(".menu-mobile-container");
+    var burger = jQuery("#burger");
+
+    if (menu.length == 0) {
+        burger.hide();
+        return;
+    }
+
+    burger.click(toggle_mobile_menu);
+    menu.prepend("<a href=\"#\" class=\"closer\"><span></span>Close</a>");
+    menu.on("click", close_mobile_menu);
+}
 
 jQuery(document).ready(function($) {
     loadGravatars();
-
+    initialise_mobile_menu();
 });

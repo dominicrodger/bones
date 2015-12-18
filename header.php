@@ -47,6 +47,8 @@
 			<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 
 				<div id="inner-header" class="wrap cf">
+					<div id="burger">Menu</div>
+
 
 					<?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
 					<?php if (has_header_image()) {
@@ -88,6 +90,19 @@
 						)); ?>
 
 					</nav>
+					<?php wp_nav_menu(array(
+    				         'container' => 'div',                           // remove nav container
+    				         'container_class' => 'menu-mobile-container',                 // class of container (should you choose to use it)
+    				         'menu' => 'Mobile Menu',  // nav name
+    				         'menu_class' => 'menu-mobile',               // adding custom nav class
+    				         'theme_location' => 'mobile-nav',                 // where it's located in the theme
+    				         'before' => '',                                 // before the menu
+        			              'after' => '',                                  // after the menu
+        			              'link_before' => '',                            // before each link
+        			              'link_after' => '',                             // after each link
+        			              'depth' => 2,                                   // limit the depth of the nav
+    				         'fallback_cb' => ''                             // fallback function (if there is one)
+					)); ?>
 
 				</div>
 
