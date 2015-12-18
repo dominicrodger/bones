@@ -141,7 +141,21 @@ function initialise_mobile_menu() {
 
     burger.click(toggle_mobile_menu);
     menu.prepend("<a href=\"#\" class=\"closer\"><span></span>Close</a>");
-    menu.on("click", close_mobile_menu);
+    jQuery(".closer").on("click", close_mobile_menu);
+
+    jQuery(document).click(function(event) {
+        if (jQuery(event.target).closest('.menu-mobile-container').length != 0) {
+            return;
+        }
+
+        if (jQuery(event.target).closest('#burger').length != 0) {
+            return;
+        }
+
+        if (jQuery('.menu-mobile-container').is(":visible")) {
+            close_mobile_menu();
+        }
+    });
 }
 
 jQuery(document).ready(function($) {
