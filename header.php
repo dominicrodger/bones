@@ -19,7 +19,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 
 		<?php // icons & favicons (for more: http://www.jonathantneal.com/blog/understand-the-favicon/) ?>
-		<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/library/images/apple-touch-icon.png">
+		<?php
+		if (get_theme_mod("apple-touch-icon")) {
+		?>
+			<link rel="apple-touch-icon" href="<?php echo get_theme_mod("apple-touch-icon"); ?>">
+		<?php
+		}
+		?>
 
 		<?php
 		if (get_theme_mod("favicon")) {
@@ -32,9 +38,15 @@
 		}
 		?>
 
-		<meta name="msapplication-TileColor" content="#f01d4f">
-		<meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/library/images/win8-tile-icon.png">
-		<meta name="theme-color" content="#121212">
+		<?php
+		if (get_theme_mod("windows-tile-icon")) {
+		?>
+			<meta name="msapplication-TileColor" content="#f01d4f">
+			<meta name="msapplication-TileImage" content="<?php echo get_theme_mod("windows-tile-icon"); ?>">
+			<meta name="theme-color" content="#121212">
+		<?php
+		}
+		?>
 
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 

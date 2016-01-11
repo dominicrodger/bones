@@ -267,6 +267,46 @@ function bones_tweak_identity_customizer($wp_customize) {
           )
       )
   );
+
+  $wp_customize->add_setting(
+      'apple-touch-icon' ,
+      array(
+          'default'   => '',
+          'transport' => 'refresh',
+      )
+  );
+
+  $wp_customize->add_control(
+      new WP_Customize_Image_Control(
+          $wp_customize,
+          'apple-touch-icon',
+          array(
+              'label'      => 'Upload an icon for Apple devices (129px/129px',
+              'section'    => 'title_tagline',
+              'settings'   => 'apple-touch-icon',
+          )
+      )
+  );
+
+  $wp_customize->add_setting(
+      'windows-tile-icon' ,
+      array(
+          'default'   => '',
+          'transport' => 'refresh',
+      )
+  );
+
+  $wp_customize->add_control(
+      new WP_Customize_Image_Control(
+          $wp_customize,
+          'windows-tile-icon',
+          array(
+              'label'      => 'Upload an icon for Windows devices (144px/144px',
+              'section'    => 'title_tagline',
+              'settings'   => 'windows-tile-icon',
+          )
+      )
+  );
 }
 
 function bones_tweak_color_customizer($wp_customize) {
