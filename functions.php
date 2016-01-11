@@ -307,6 +307,9 @@ function bones_tweak_identity_customizer($wp_customize) {
           )
       )
   );
+
+  $wp_customize->remove_control("display_header_text");
+  $wp_customize->remove_control("site_icon");
 }
 
 function bones_tweak_color_customizer($wp_customize) {
