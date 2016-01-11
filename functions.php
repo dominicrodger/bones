@@ -247,6 +247,28 @@ function bones_add_color_setting($wp_customize, $title, $slug, $default) {
   );
 }
 
+function bones_tweak_identity_customizer($wp_customize) {
+  $wp_customize->add_setting(
+      'favicon' ,
+      array(
+          'default'   => '',
+          'transport' => 'refresh',
+      )
+  );
+
+  $wp_customize->add_control(
+      new WP_Customize_Image_Control(
+          $wp_customize,
+          'favicon',
+          array(
+              'label'      => 'Upload a favicon',
+              'section'    => 'title_tagline',
+              'settings'   => 'favicon',
+          )
+      )
+  );
+}
+
 function bones_tweak_color_customizer($wp_customize) {
   $wp_customize->remove_control("background_color");
   $wp_customize->remove_control("header_textcolor");
@@ -318,6 +340,7 @@ function bones_theme_customizer($wp_customize) {
   // $wp_customize->get_section('colors')->title = __( 'Theme Colors' );
   // $wp_customize->get_section('background_image')->title = __( 'Images' );
 
+  bones_tweak_identity_customizer($wp_customize);
   bones_add_header_customizer($wp_customize);
   bones_add_footer_customizer($wp_customize);
   bones_tweak_color_customizer($wp_customize);
