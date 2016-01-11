@@ -50,7 +50,6 @@
 					<div id="burger">Menu</div>
 
 
-					<?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
 					<?php if (has_header_image()) {
 					?>
 					<a href="<?php echo home_url(); ?>" rel="nofollow" class="header-image-link">
@@ -70,9 +69,6 @@
 					<?php
 					}
 					?>
-					<?php // if you'd like to use the site description you can un-comment it below ?>
-					<?php // bloginfo('description'); ?>
-
 
 					<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 						<?php wp_nav_menu(array(
