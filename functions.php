@@ -386,7 +386,15 @@ function bones_theme_customizer($wp_customize) {
   bones_tweak_color_customizer($wp_customize);
 }
 
+function bones_customizer_add_css() {
+?>
+<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/library/css/customizer.css" type="text/css" media="all">
+<?php
+}
+
 add_action( 'customize_register', 'bones_theme_customizer' );
+add_action( 'customize_controls_print_styles',
+            'bones_customizer_add_css' );
 
 /************* ACTIVE SIDEBARS ********************/
 
