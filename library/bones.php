@@ -122,60 +122,6 @@ function get_opt_with_default($key, $default) {
     return $val;
 }
 
-function bones_custom_styles() {
-    $keys = array(
-        'header_color',
-        'header_text_color',
-        'header_menu_color',
-        'header_menu_text_color',
-        'link_color',
-        'footer_color',
-        'footer_text_color'
-    );
-
-    $colors = array();
-
-    foreach ($keys as $key) {
-        $colors[$key] = get_opt_with_default($key, "inherit");
-    }
-
-    $header_margin_bottom = get_opt_with_default(
-        "header_image_bottom_margin", "0"
-    );
-    $header_margin_top = get_opt_with_default(
-        "header_image_top_margin", "0"
-    );
-
-    $custom_css = "
-    a, a:visited {
-        color: {$colors['link_color']};
-    }
-    .header {
-        background-color: {$colors['header_color']};
-        color: {$colors['header_text_color']};
-    }
-    .header a.header-image-link {
-        margin-bottom: {$header_margin_bottom}px;
-        margin-top: {$header_margin_top}px;
-    }
-    .header #logo a {
-        color: {$colors['header_text_color']};
-    }
-    .header nav {
-        background-color: {$colors['header_menu_color']};
-    }
-    .header nav li a {
-        color: {$colors['header_menu_text_color']};
-    }
-    .footer {
-        background-color: {$colors['footer_color']};
-        color: {$colors['footer_text_color']};
-    }
-    ";
-
-    wp_add_inline_style('bones-stylesheet', $custom_css);
-}
-
 /*********************
 SCRIPTS & ENQUEUEING
 *********************/
@@ -219,8 +165,6 @@ function bones_scripts_and_styles() {
 		wp_enqueue_script( 'bones-js' );
 
   }
-
-  bones_custom_styles();
 }
 
 /*********************
