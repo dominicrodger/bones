@@ -88,8 +88,9 @@
 					<?php
 					}
 					?>
-
-					<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+			</header>
+                    <div class="nav-wrapper">
+					<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement" class="wrap">
 						<?php wp_nav_menu(array(
     					         'container' => false,                           // remove nav container
     					         'container_class' => 'menu cf',                 // class of container (should you choose to use it)
@@ -105,6 +106,7 @@
 						)); ?>
 
 					</nav>
+                    </div>
 					<?php wp_nav_menu(array(
     				         'container' => 'div',                           // remove nav container
     				         'container_class' => 'menu-mobile-container',                 // class of container (should you choose to use it)
@@ -120,5 +122,3 @@
 					)); ?>
 
 				</div>
-
-			</header>
