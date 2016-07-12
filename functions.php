@@ -281,7 +281,7 @@ function bones_tweak_identity_customizer($wp_customize) {
           $wp_customize,
           'apple-touch-icon',
           array(
-              'label'      => 'Upload an icon for Apple devices (129px/129px',
+              'label'      => 'Upload an icon for Apple devices (129px/129px)',
               'section'    => 'title_tagline',
               'settings'   => 'apple-touch-icon',
           )
@@ -301,7 +301,7 @@ function bones_tweak_identity_customizer($wp_customize) {
           $wp_customize,
           'windows-tile-icon',
           array(
-              'label'      => 'Upload an icon for Windows devices (144px/144px',
+              'label'      => 'Upload an icon for Windows devices (144px/144px)',
               'section'    => 'title_tagline',
               'settings'   => 'windows-tile-icon',
           )
